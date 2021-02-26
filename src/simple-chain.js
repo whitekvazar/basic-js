@@ -20,7 +20,7 @@ const chainMaker = {
       position < 0 ||
       position > this.tempChain.length) {
         this.tempChain = [];
-        throw new Error('Wrong position');
+        throw new Error();
     }
 
     this.tempChain[position - 1] = undefined;
@@ -37,7 +37,7 @@ const chainMaker = {
     let result = '';
     
     cleanChain.forEach(function (element) {
-      result += `( ${element} )~~`;
+      result = `${result}( ${element} )~~`;
     });
 
     this.tempChain = [];
